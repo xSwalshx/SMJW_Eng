@@ -4,10 +4,10 @@
 #include <GL/glew.h>
 
 //Header
-class TriangleRenderer : public Component
+class Renderer : public Component
 {
 public:
-  TriangleRenderer();
+  Renderer();
 
   void draw();
 

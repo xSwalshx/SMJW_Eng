@@ -25,8 +25,8 @@ target_link_libraries(SMJW_Eng SDL2 opengl32 glew32)
 #given name and compiler from the specified source files
 add_executable(Game
   src/Game/main.cpp
-  src/Game/TriangleRenderer.h
-  src/Game/TriangleRenderer.cpp
+  src/Game/Renderer.h
+  src/Game/Renderer.cpp
 )
 
 #"target_link_libraries" - Tells "Game" executable to link with my "SMJW_Eng" Library

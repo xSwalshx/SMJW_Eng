@@ -1,5 +1,5 @@
 //Local Includes
-#include "TriangleRenderer.h"
+#include "Renderer.h"
 
 //Include Libraries
 #include <Eng/Eng.h>
@@ -19,7 +19,7 @@ int main()
   std::shared_ptr<Entity> entity = core->addEntity();
   
   // Add a very simple component to it
-  std::shared_ptr<TriangleRenderer> tr = entity->addComponent<TriangleRenderer>();
+  std::shared_ptr<Renderer> tr = entity->addComponent<Renderer>();
   //std::shared_ptr<Component> testScreen = entity->addComponent<Component>();
   // Start the engine’s main loop
   core->start();

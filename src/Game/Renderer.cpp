@@ -1,5 +1,5 @@
 //Include Header Files
-#include "TriangleRenderer.h"
+#include "Renderer.h"
 
 #include <iostream>
 
@@ -40,7 +40,7 @@ const GLchar *fragmentShaderSrc =
 "";
 
 
-void TriangleRenderer::draw()
+void Renderer::draw()
 {
   std::cout << "TRI REN DRAWING FUNC CALLED" << std::endl;
 
@@ -69,7 +69,7 @@ void TriangleRenderer::draw()
 
 }
 
-TriangleRenderer::TriangleRenderer()
+Renderer::Renderer()
 {
   if (SDL_Init(SDL_INIT_VIDEO) < 0)
   {
