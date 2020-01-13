@@ -1,5 +1,4 @@
 //Local Includes
-#include "Renderer.h"
 
 //Include Libraries
 #include <Eng/Eng.h>
@@ -19,6 +18,7 @@ int main()
   std::shared_ptr<Entity> entity = core->addEntity();
   
   // Add a very simple component to it
+  Shader shader("..\resources\simple.vert", "..\resources\simple.frag");
   std::shared_ptr<Renderer> tr = entity->addComponent<Renderer>();
   //std::shared_ptr<Component> testScreen = entity->addComponent<Component>();
   // Start the engine’s main loop

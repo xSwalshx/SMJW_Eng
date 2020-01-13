@@ -5,6 +5,8 @@
 #include "Core.h"
 #include "Entity.h"
 #include "Component.h" 
+#include "Renderer.h"
+#include "Shader.h"
 
 
 #endif
