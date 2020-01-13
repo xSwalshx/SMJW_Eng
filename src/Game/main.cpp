@@ -18,11 +18,13 @@ int main()
   std::shared_ptr<Entity> entity = core->addEntity();
   
   // Add a very simple component to it
-  Shader shader("..\resources\simple.vert", "..\resources\simple.frag");
-  std::shared_ptr<Renderer> tr = entity->addComponent<Renderer>();
+  Shader shader("../resources/simple.vert", "../resources/simple.frag");
+  std::shared_ptr<Renderer> renderer = entity->addComponent<Renderer>();
+  renderer->loadTexture("../resources/WoodCrateTexture.jpg");
+
   //std::shared_ptr<Component> testScreen = entity->addComponent<Component>();
   // Start the engine’s main loop
   core->start();
 	
-	return 0;
+  return 0;
 }

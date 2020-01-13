@@ -7,19 +7,23 @@
 #include <glm/gtc/matrix_transform.hpp>
 
 #include "stb_image.h"
+#include "Component.h"
 
 #include <iostream>
 #include <vector>
 
 
-class Renderer {
+class Renderer : public Component
+{
 public:
 
 	unsigned int VAO;
 
-	Renderer();
 	void loadTexture(char const * path);
-	void draw();
+
+	void onInit();
+	void onTick();
+
 private:
 	unsigned int VBO;
 	unsigned int texture;
