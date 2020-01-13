@@ -18,7 +18,7 @@ int main()
   std::shared_ptr<Entity> entity = core->addEntity();
   
   // Add a very simple component to it
-  Shader shader("../resources/simple.vert", "../resources/simple.frag");
+  std::shared_ptr<Shader> shader = entity->addComponent<Shader>("../resources/simple.vert", "../resources/simple.frag");
   std::shared_ptr<Renderer> renderer = entity->addComponent<Renderer>();
   renderer->loadTexture("../resources/WoodCrateTexture.jpg");
 

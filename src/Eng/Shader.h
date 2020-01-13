@@ -11,18 +11,22 @@
 #include <sstream>
 #include <iostream>
 
+#include "Component.h"
 
-class Shader {
+
+class Shader : public Component{
 
 public:
 	// the program ID
 	unsigned int ID;
 
 	// constructor reads and builds the shader
-	Shader(const GLchar* vertexShaderFilePath, const GLchar* fragmentShaderFilePath);
+
+	void onInit(const GLchar* vertexShaderFilePath, const GLchar* fragmentShaderFilePath);
+	//Shader(const GLchar* vertexShaderFilePath, const GLchar* fragmentShaderFilePath);
 
 	// use/activate the shader
-	void use();
+	void onDisplay();
 	// utility uniform functions
 	void setBool(const std::string &name, bool value) const;
 	void setInt(const std::string &name, int value) const;

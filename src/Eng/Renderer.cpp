@@ -70,23 +70,23 @@ void Renderer::onInit() {
 	          << "********************************" << std::endl;
 };
 
-void Renderer::onTick()
+void Renderer::onDisplay()
 {
+
+	//model matrices stuff
+
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, texture);
 	
 	// render cube
 	glBindVertexArray(VAO);
 	glDrawArrays(GL_TRIANGLES, 0, 36);
-
-	//Use Shader
-	_shader.use();
-
+	
 	//unbind
 	glBindVertexArray(0);
 	glActiveTexture(GL_TEXTURE0);
 
-	std::cout << "Renderer Tick Called" << std::endl;
+	std::cout << "Renderer display Called" << std::endl;
 }
 
 void Renderer::loadTexture(char const * path)

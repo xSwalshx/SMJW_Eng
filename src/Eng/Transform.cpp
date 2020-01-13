@@ -9,7 +9,7 @@ glm::mat4 Transform::getModel()
   rtn = glm::rotate(rtn, m_Rotation.x, glm::vec3(1, 0, 0));
   rtn = glm::rotate(rtn, m_Rotation.y, glm::vec3(0, 1, 0));
   rtn = glm::rotate(rtn, m_Rotation.z, glm::vec3(0, 0, 1));
-  rtrn = glm::scale(rtn, m_Scale);
+  rtn = glm::scale(rtn, m_Scale);
 
   return rtn;
 }

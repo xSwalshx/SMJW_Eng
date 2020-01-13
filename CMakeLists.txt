@@ -21,7 +21,6 @@ add_library(SMJW_Eng
   src/Eng/Shader.h
   src/Eng/Shader.cpp
   src/Eng/stb_image.h
-  src/Eng/stb_image.h
   src/Eng/stb_image.cpp
 )
 

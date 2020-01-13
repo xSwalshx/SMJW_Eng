@@ -1,6 +1,6 @@
 #include "Shader.h"
 
-Shader::Shader(const GLchar* vertexShaderFilePath, const GLchar* fragmentShaderFilePath) {
+void Shader::onInit(const GLchar* vertexShaderFilePath, const GLchar* fragmentShaderFilePath) {
 
 	// 1. retrieve the vertex/fragment source code from filePath
 	std::string vertexCode;
@@ -93,7 +93,7 @@ Shader::Shader(const GLchar* vertexShaderFilePath, const GLchar* fragmentShaderF
 	glDeleteShader(fragmentShader);
 }
 
-void Shader::use() {
+void Shader::onDisplay() {
 	glUseProgram(ID);
 }
 void Shader::setBool(const std::string &name, bool value) const {

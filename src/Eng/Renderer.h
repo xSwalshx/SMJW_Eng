@@ -22,7 +22,7 @@ public:
 	void loadTexture(char const * path);
 
 	void onInit();
-	void onTick();
+	void onDisplay();
 
 private:
 	unsigned int VBO;
