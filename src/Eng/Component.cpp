@@ -1,11 +1,19 @@
 #include "Component.h"
+#include "Entity.h"
 
-void Component::update()
+
+Component::~Component() { }
+void Component::onInit() { }
+void Component::onBegin() { }
+void Component::onTick() { }
+void Component::onDisplay() { }
+
+std::shared_ptr<Entity> Component::getEntity()
 {
-
+	return entity.lock();
 }
 
-void Component::draw()
+std::shared_ptr<Core> Component::getCore()
 {
-
+	return getEntity()->getCore();
 }

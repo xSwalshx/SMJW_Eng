@@ -1,19 +1,30 @@
 #include "Entity.h"
-#include "Component.h"
 
-//Fucntions
-void Entity::update()
+std::shared_ptr<Core> Entity::getCore()
 {
-  for(size_t i = 0; i < components.size(); i++)
-  {
-    components.at(i)->update();
-  } 
+	return core.lock();
 }
 
-void Entity::draw()
+void Entity::tick()
 {
-  for(size_t i = 0; i < components.size(); i++)
-  {
-    components.at(i)->draw();
-  } 
+	for (std::vector<std::shared_ptr<Component> >::iterator it = components.begin();
+		it != components.end(); it++)
+	{
+		if (!(*it)->began)
+		{
+			(*it)->onBegin();
+			(*it)->began = true;
+		}
+
+		(*it)->onTick();
+	}
+}
+
+void Entity::display()
+{
+	for (std::vector<std::shared_ptr<Component> >::iterator it = components.begin();
+		it != components.end(); it++)
+	{
+		(*it)->onDisplay();
+	}
 }
