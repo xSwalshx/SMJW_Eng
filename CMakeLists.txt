@@ -15,7 +15,14 @@ add_library(SMJW_Eng
   src/Eng/Component.h
   src/Eng/Component.cpp
   src/Eng/Exception.h
-  src/Eng/Exception.cpp
+  src/Eng/Exception.cpp  
+  src/Eng/Renderer.h
+  src/Eng/Renderer.cpp
+  src/Eng/Shader.h
+  src/Eng/Shader.cpp
+  src/Eng/stb_image.h
+  src/Eng/stb_image.h
+  src/Eng/stb_image.cpp
 )
 
 #"target_link_libraries" - States that "SMJW_Eng" requires "SDL2" etc
@@ -25,8 +32,7 @@ target_link_libraries(SMJW_Eng SDL2 opengl32 glew32)
 #given name and compiler from the specified source files
 add_executable(Game
   src/Game/main.cpp
-  src/Game/Renderer.h
-  src/Game/Renderer.cpp
+
 )
 
 #"target_link_libraries" - Tells "Game" executable to link with my "SMJW_Eng" Library
