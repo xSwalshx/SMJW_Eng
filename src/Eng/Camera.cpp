@@ -1,11 +1,20 @@
 #include "Camera.h"
 
-void Camera::onInit(glm::vec3 _cameraPos, glm::vec3 _cameraFront, glm::vec3 _cameraUp)
-{
-  setCameraPos(_cameraPos);
-  setCameraFront(_cameraFront);
-  setCameraUp(_cameraUp);
+#include "Entity.h"
 
-  glm::mat4 _view = glm::lookAt(_cameraPos, _cameraPos + _cameraFront, _cameraUp);
-  setViewMatrix(_view);
-}
+#include "Transform.h"
+
+namespace Eng
+{
+
+  void Camera::onInit()
+  {
+    glm::vec3 _pos = getEntity()->getComponent<Transform>()->getPosition();
+    glm::vec3 _front = getEntity()->getComponent<Transform>()->getFront();
+    glm::vec3 _up = getEntity()->getComponent<Transform>()->getUp();
+
+    glm::mat4 _view = glm::lookAt(_pos, _pos + _front, _up);
+    setViewMatrix(_view);
+  }
+
+} //End of namespace

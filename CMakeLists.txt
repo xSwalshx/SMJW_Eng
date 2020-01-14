@@ -28,6 +28,8 @@ add_library(SMJW_Eng
   src/Eng/Shader.cpp
   src/Eng/stb_image.h
   src/Eng/stb_image.cpp
+  src/Eng/Transform.h
+  src/Eng/Transform.cpp
   src/Eng/Camera.h
   src/Eng/Camera.cpp
 

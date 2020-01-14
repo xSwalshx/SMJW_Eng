@@ -12,21 +12,24 @@
 #include <iostream>
 #include <vector>
 
-
-class Renderer : public Component
+namespace Eng
 {
-public:
+  class Renderer : public Component
+  {
+  public:
 
-	unsigned int VAO;
+    unsigned int VAO;
 
-	void loadTexture(char const * path);
+    void loadTexture(char const * path);
 
-	void onInit();
-	void onDisplay();
+    void onInit();
+    void onDisplay();
 
-private:
-	unsigned int VBO;
-	unsigned int texture;
-};
+  private:
+    unsigned int VBO;
+    unsigned int texture;
+  };
+
+} //End of namespace
 
 #endif

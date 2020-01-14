@@ -5,15 +5,18 @@
 
 #include "Component.h"
 
-class Keyboard : public Component
+namespace Eng
 {
-private:
+  class Keyboard : public Component
+  {
+  private:
 
 
-public:
+  public:
 
 
-};
+  };
 
+} //End of namespace
 
 #endif // !_KEYBOARD_

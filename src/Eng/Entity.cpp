@@ -1,30 +1,35 @@
 #include "Entity.h"
 
-std::shared_ptr<Core> Entity::getCore()
+namespace Eng
 {
-	return core.lock();
-}
 
-void Entity::tick()
-{
-	for (std::vector<std::shared_ptr<Component> >::iterator it = components.begin();
-		it != components.end(); it++)
-	{
-		if (!(*it)->began)
-		{
-			(*it)->onBegin();
-			(*it)->began = true;
-		}
+  std::shared_ptr<Core> Entity::getCore()
+  {
+    return core.lock();
+  }
 
-		(*it)->onTick();
-	}
-}
+  void Entity::tick()
+  {
+    for (std::vector<std::shared_ptr<Component> >::iterator it = components.begin();
+      it != components.end(); it++)
+    {
+      if (!(*it)->began)
+      {
+        (*it)->onBegin();
+        (*it)->began = true;
+      }
 
-void Entity::display()
-{
-	for (std::vector<std::shared_ptr<Component> >::iterator it = components.begin();
-		it != components.end(); it++)
-	{
-		(*it)->onDisplay();
-	}
-}
+      (*it)->onTick();
+    }
+  }
+
+  void Entity::display()
+  {
+    for (std::vector<std::shared_ptr<Component> >::iterator it = components.begin();
+      it != components.end(); it++)
+    {
+      (*it)->onDisplay();
+    }
+  }
+
+} //End of namespace
