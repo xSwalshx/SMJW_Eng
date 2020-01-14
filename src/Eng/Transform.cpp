@@ -2,6 +2,7 @@
 
 #include <glm/ext.hpp>
 
+//Get Model Function
 glm::mat4 Transform::getModel()
 {
   glm::mat4 rtn(1.0f);

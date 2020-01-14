@@ -5,6 +5,7 @@
 class Transform : public Component
 {
 private:
+  //Variables
   glm::mat4 m_Transform = glm::mat4(1.0f); //Initialize to identity matrix
   glm::vec3 m_Position;
   glm::vec3 m_Rotation;
