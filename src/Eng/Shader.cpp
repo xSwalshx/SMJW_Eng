@@ -1,5 +1,11 @@
 #include "Shader.h"
 
+#include "Camera.h"
+#include "Entity.h"
+#include "Transform.h"
+//#include "Component.h"
+
+
 namespace Eng
 {
 
@@ -96,9 +102,25 @@ namespace Eng
     glDeleteShader(fragmentShader);
   }
 
-  void Shader::onDisplay() {
+  void Shader::onDisplay() 
+  {
     glUseProgram(ID);
+
+    //Creating View Matrix
+    glm::vec3 _pos = getEntity()->getComponent<Transform>()->getPosition();
+    glm::vec3 _front = getEntity()->getComponent<Transform>()->getFront();
+    glm::vec3 _up = getEntity()->getComponent<Transform>()->getUp();
+    glm::mat4 _view = glm::lookAt(_pos, _pos + _front, _up);
+
+    //Create Projection Matrix
+    glm::mat4 _projection = glm::perspective(glm::radians(45.0f), (float)800.0f / (float)600.0f, 0.1f, 100.0f);
+
+    //Pass Variables into the Shader
+    setMat4("view", _view);
+    setMat4("projection", _projection);
   }
+
+
   void Shader::setBool(const std::string &name, bool value) const {
     glUniform1i(glGetUniformLocation(ID, name.c_str()), (int)value);
   }

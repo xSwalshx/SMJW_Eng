@@ -3,9 +3,6 @@
 
 #include <GL/glew.h>
 
-#define WINDOW_WIDTH 800
-#define WINDOW_HEIGHT 600
-
 namespace Eng
 {
 
@@ -20,9 +17,9 @@ namespace Eng
       throw std::exception();
     }
 
-    rtn->window = SDL_CreateWindow("My Engine",
+    rtn->window = SDL_CreateWindow("ASTEROIDS BY SAMUEL WALSH",
       SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-      WINDOW_WIDTH, WINDOW_HEIGHT,
+      800, 600,
       SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
 
     if (!SDL_GL_CreateContext(rtn->window))

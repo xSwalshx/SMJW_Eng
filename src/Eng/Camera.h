@@ -16,6 +16,7 @@ namespace Eng
   private:
     //Variables
     glm::mat4 m_ViewMatrix;
+    glm::mat4 m_ProjectionMatrix;
 
   public:
     //initalize
@@ -23,9 +24,11 @@ namespace Eng
 
     //Setters
     void setViewMatrix(glm::mat4 _viewMatrix) { m_ViewMatrix = _viewMatrix; }
+    void setProjectionMatrix(glm::mat4 _projectionMatrix) { m_ProjectionMatrix = _projectionMatrix; }
 
     //Getters
     glm::mat4 getViewMatrix() { return m_ViewMatrix; }
+    glm::mat4 getProjectionMatrix() { return m_ProjectionMatrix; }
 
   };
 

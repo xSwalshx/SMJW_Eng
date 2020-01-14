@@ -14,18 +14,17 @@ int main()
   // Initialize our engine
   std::shared_ptr<Eng::Core> core = Eng::Core::initialize();
 
-  // Create a single in-game object
-  std::shared_ptr<Eng::Entity> entity = core->addEntity();
-  
-  // Add a very simple component to it
-  std::shared_ptr<Eng::Shader> shader = entity->addComponent<Eng::Shader>("../resources/simple.vert", "../resources/simple.frag");
-  std::shared_ptr<Eng::Renderer> renderer = entity->addComponent<Eng::Renderer>();
-  renderer->loadTexture("../resources/WoodCrateTexture.jpg");
+  // Create a cube
+  std::shared_ptr<Eng::Entity> cubeEntity = core->addEntity();
+  std::shared_ptr<Eng::Transform> cubeTransform = cubeEntity->addComponent<Eng::Transform>();
+  std::shared_ptr<Eng::Shader> cubeShader = cubeEntity->addComponent<Eng::Shader>("../resources/simple.vert", "../resources/simple.frag");
+  std::shared_ptr<Eng::Renderer> cubeRenderer = cubeEntity->addComponent<Eng::Renderer>();
+  cubeRenderer->loadTexture("../resources/WoodCrateTexture.jpg");
 
   // Create a Camera
-  std::shared_ptr<Eng::Entity> camera = core->addEntity();
-  camera->addComponent<Eng::Transform>(); // Add the Transform Component
-  camera->addComponent<Eng::Camera>();    // Add the Camera Component
+  std::shared_ptr<Eng::Entity> cameraEntity = core->addEntity();
+  std::shared_ptr<Eng::Transform> cameraTransform = cameraEntity->addComponent<Eng::Transform>(); // Add the Transform Component
+  std::shared_ptr<Eng::Camera> cameraCamera = cameraEntity->addComponent<Eng::Camera>();    // Add the Camera Component
   
   // Start the engine’s main loop
   core->start();
