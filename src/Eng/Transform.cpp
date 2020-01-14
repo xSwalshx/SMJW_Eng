@@ -13,4 +13,3 @@ glm::mat4 Transform::getModel()
 
   return rtn;
 }
-
