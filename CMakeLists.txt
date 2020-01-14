@@ -7,6 +7,8 @@ include_directories(src)
 
 #"add_library" - Generates a library containing my engine "SMJW_Eng"
 add_library(SMJW_Eng
+
+  #Engine Components
   src/Eng/Eng.h
   src/Eng/Core.h
   src/Eng/Core.cpp
@@ -14,14 +16,24 @@ add_library(SMJW_Eng
   src/Eng/Entity.cpp
   src/Eng/Component.h
   src/Eng/Component.cpp
+
+  #Exception Handling
   src/Eng/Exception.h
-  src/Eng/Exception.cpp  
+  src/Eng/Exception.cpp 
+  
+  #Rendering to Screen
   src/Eng/Renderer.h
   src/Eng/Renderer.cpp
   src/Eng/Shader.h
   src/Eng/Shader.cpp
   src/Eng/stb_image.h
   src/Eng/stb_image.cpp
+  src/Eng/Camera.h
+  src/Eng/Camera.cpp
+
+  #Input Method
+  src/Eng/Keyboard.h
+  src/Eng/Keyboard.cpp
 )
 
 #"target_link_libraries" - States that "SMJW_Eng" requires "SDL2" etc
