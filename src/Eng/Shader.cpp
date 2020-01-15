@@ -106,10 +106,13 @@ namespace Eng
   {
     glUseProgram(ID);
 
+	//Rotate Cube
+	glm::vec3 _rotation = getEntity()->getComponent<Transform>()->getRotation();
+	glm::vec3 _rotationIncrement = getEntity()->getComponent<Transform>()->getRotationIncrement();
+	glm::vec3 _newRotation = _rotation + _rotationIncrement;
+	getEntity()->getComponent<Transform>()->setRotation(_newRotation);
+
     //Creating View Matrix
-    glm::vec3 _pos = getEntity()->getComponent<Transform>()->getPosition();
-    glm::vec3 _front = getEntity()->getComponent<Transform>()->getFront();
-    glm::vec3 _up = getEntity()->getComponent<Transform>()->getUp();
 	glm::mat4 _view = glm::mat4(1);// glm::lookAt(_pos, _pos + _front, _up);
 
 	//Get Model matrix
