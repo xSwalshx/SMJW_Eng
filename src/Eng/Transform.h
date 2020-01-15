@@ -11,7 +11,7 @@ namespace Eng
     //Variables
     glm::mat4 m_Transform = glm::mat4(1.0f); //Initialize to identity matrix
     glm::vec3 m_Position;
-    glm::vec3 m_Rotation = glm::vec3 (0.5f,0.5f,0.0f);
+    glm::vec3 m_Rotation = glm::vec3 (0.0f,0.0f,0.0f);
 	glm::vec3 m_Scale = glm::vec3(2.5f);
     glm::vec3 m_Front;
     glm::vec3 m_Up;
