@@ -17,7 +17,7 @@ namespace Eng
       throw std::exception();
     }
 
-    rtn->window = SDL_CreateWindow("ASTEROIDS BY SAMUEL WALSH",
+    rtn->window = SDL_CreateWindow("WHAT HAS 6 FACES AND 12 VERTICES?",
       SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
       800, 600,
       SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
@@ -60,7 +60,7 @@ namespace Eng
         (*it)->tick();
       }
 
-      glClearColor(0.0f, 0.0f, 0.3f, 1.0f);
+      glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
       glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
       for (std::vector<std::shared_ptr<Entity> >::iterator it = entities.begin();

@@ -113,7 +113,7 @@ namespace Eng
     getEntity()->getComponent<Transform>()->setRotation(_newRotation);
 
     //Creating View Matrix
-    glm::mat4 _view = glm::mat4(1);// glm::lookAt(_pos, _pos + _front, _up);
+    glm::mat4 _view = glm::mat4(1); //Use an identity matrix
 
     //Get Model matrix
     glm::mat4 _model = getEntity()->getComponent<Transform>()->getModel();
