@@ -102,27 +102,27 @@ namespace Eng
     glDeleteShader(fragmentShader);
   }
 
-  void Shader::onDisplay() 
+  void Shader::onDisplay()
   {
     glUseProgram(ID);
 
-	//Rotate Cube
-	glm::vec3 _rotation = getEntity()->getComponent<Transform>()->getRotation();
-	glm::vec3 _rotationIncrement = getEntity()->getComponent<Transform>()->getRotationIncrement();
-	glm::vec3 _newRotation = _rotation + _rotationIncrement;
-	getEntity()->getComponent<Transform>()->setRotation(_newRotation);
+    //Rotate Cube
+    glm::vec3 _rotation = getEntity()->getComponent<Transform>()->getRotation();
+    glm::vec3 _rotationIncrement = getEntity()->getComponent<Transform>()->getRotationIncrement();
+    glm::vec3 _newRotation = _rotation + _rotationIncrement;
+    getEntity()->getComponent<Transform>()->setRotation(_newRotation);
 
     //Creating View Matrix
-	glm::mat4 _view = glm::mat4(1);// glm::lookAt(_pos, _pos + _front, _up);
+    glm::mat4 _view = glm::mat4(1);// glm::lookAt(_pos, _pos + _front, _up);
 
-	//Get Model matrix
-	glm::mat4 _model = getEntity()->getComponent<Transform>()->getModel();
+    //Get Model matrix
+    glm::mat4 _model = getEntity()->getComponent<Transform>()->getModel();
 
     //Create Projection Matrix
     glm::mat4 _projection = glm::perspective(glm::radians(45.0f), (float)800.0f / (float)600.0f, 0.1f, 100.0f);
 
     //Pass Variables into the Shader
-	setMat4("model", _model);
+    setMat4("model", _model);
     setMat4("view", _view);
     setMat4("projection", _projection);
   }
