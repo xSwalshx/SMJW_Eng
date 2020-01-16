@@ -6,7 +6,6 @@
 
 namespace Eng
 {
-
   Exception::Exception(const std::string& message)
   {
     this->message = message;

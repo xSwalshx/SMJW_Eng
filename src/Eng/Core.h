@@ -35,17 +35,21 @@ namespace Eng
     */
     void stop();
 
+    /**
+    * \brief Add Entity Function
+    * This function adds an entity object to the vector list of entities
+    */
     std::shared_ptr<Entity> addEntity();
 
-    const float m_WindowWidth = 800;
-    const float m_WindowHeight = 600;
+    const float m_WindowWidth = 800;                  ///<Float to define the SDL Window Width
+    const float m_WindowHeight = 600;                 ///<Float to define the SDL Window Height
 
   private:
-    bool running;
-    std::vector<std::shared_ptr<Entity> > entities;
-    std::weak_ptr<Core> self;
+    bool running;                                     ///<Running Boolean to control the game loop
+    std::vector<std::shared_ptr<Entity> > entities;   ///<Vector list of type Entity - Every Entity in the game will be in this list
+    std::weak_ptr<Core> self;                         ///<Weak pointer of Core points to itself. This is used in the Initalize function
 
-    SDL_Window *window;
+    SDL_Window *window;                               ///<Variable name for SDL Window. Used in the Initialize function to create a window
 
   };
 

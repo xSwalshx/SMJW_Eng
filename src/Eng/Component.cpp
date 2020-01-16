@@ -3,7 +3,6 @@
 
 namespace Eng
 {
-
   Component::~Component() { }
   void Component::onInit() { }
   void Component::onBegin() { }

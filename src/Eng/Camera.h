@@ -18,8 +18,8 @@ namespace Eng
   {
   private:
     //Variables
-    glm::mat4 m_ViewMatrix;         ///View Matrix
-    glm::mat4 m_ProjectionMatrix;   ///Projection Matrix
+    glm::mat4 m_ViewMatrix;         ///<View Matrix
+    glm::mat4 m_ProjectionMatrix;   ///<Projection Matrix
 
   public:
     //Setters

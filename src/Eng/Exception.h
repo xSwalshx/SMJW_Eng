@@ -4,6 +4,7 @@
 namespace Eng
 {
 
+  //Exception Class
   struct Exception : public std::exception
   {
     Exception(const std::string& message);

@@ -15,7 +15,7 @@ namespace Eng
   */
   class Component
   {
-    friend class Entity; ///Enables Component class to access the Entity class' private and protected members
+    friend class Entity; ///<Enables Component class to access the Entity class' private and protected members
 
   public:
     /**
@@ -35,8 +35,8 @@ namespace Eng
 
   private:
     //Variables
-    std::weak_ptr<Entity> entity; ///Weak pointer of type Entity 
-    bool began;                   ///Boolean to control ticks for Components with Entity
+    std::weak_ptr<Entity> entity; ///<Weak pointer of type Entity 
+    bool began;                   ///<Boolean to control ticks for Components with Entity
 
     /**
     * \brief Virtual on Initalize function

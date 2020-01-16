@@ -89,7 +89,8 @@ namespace Eng
     glBindVertexArray(0);
     glActiveTexture(GL_TEXTURE0);
 
-    std::cout << "Renderer display Called" << std::endl;
+    //Use for testing
+    //std::cout << "Renderer display Called" << std::endl;
   }
 
   void Renderer::loadTexture(char const * path)
@@ -119,7 +120,6 @@ namespace Eng
       glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
       texture = textureID;
-
     }
     else
     {

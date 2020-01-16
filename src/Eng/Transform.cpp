@@ -4,7 +4,6 @@
 
 namespace Eng
 {
-
   //Get Model Function
   glm::mat4 Transform::getModel()
   {

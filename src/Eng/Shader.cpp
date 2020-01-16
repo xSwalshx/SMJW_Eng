@@ -1,14 +1,10 @@
 #include "Shader.h"
-
 #include "Camera.h"
 #include "Entity.h"
 #include "Transform.h"
-//#include "Component.h"
-
 
 namespace Eng
 {
-
   void Shader::onInit(const GLchar* vertexShaderFilePath, const GLchar* fragmentShaderFilePath) {
 
     // 1. retrieve the vertex/fragment source code from filePath
